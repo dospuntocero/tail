@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer base {
+    .poppins-regular {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .poppins-black {
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+}
+
+.btn{
+    @apply bg-accent text-white font-bold py-2 px-4 rounded transition;
+}
+
+.btn:hover{
+    @apply bg-accent saturate-150;
+}

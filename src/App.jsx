@@ -4,19 +4,23 @@ import Header from './secciones/Header.jsx'
 import Testimonials from './secciones/Testimonials.jsx'
 import Faqs from './secciones/Faqs'
 import TheTeam from './secciones/The-team'
-
+import MasonryGallery from './secciones/MasonryGallery'
+import Presentacion from './secciones/Presentacion'
+import GaleriaLogos from './secciones/GaleriaLogos'
+import Services from './secciones/Servicios'
+import Footer from './secciones/Footer'
 
 function App() {
 
   return (
     <>
-
-      <Header />
+      <Header/>
+      <Presentacion/>
+      <Services/>
+      <GaleriaLogos/>
       <Faqs/>
-
-      <Testimonials />
-      <TheTeam />
-      
+      <MasonryGallery/>
+      <Footer/>
     </>
   )
 }
