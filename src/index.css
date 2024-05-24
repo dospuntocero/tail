@@ -25,3 +25,7 @@
 .btn:hover{
     @apply bg-accent saturate-150;
 }
+.filter-button:hover, 
+.filter-button.active{
+  @apply bg-terciary;
+}

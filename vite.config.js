@@ -18,10 +18,7 @@ export default defineConfig({
         web: resolve(root, 'web','index.html'),
       },
     },
-
-
-
-
+    base: '',
   },
 })
 

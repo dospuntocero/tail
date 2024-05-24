@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const gallery = [
     { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg', category: 'editorial' },
@@ -22,7 +23,6 @@ const gallery = [
 
 const Gallery = () => {
     const [activeFilter, setActiveFilter] = useState('todas');
-
     const [filteredImages, setFilteredImages] = useState(gallery);
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -32,7 +32,7 @@ const Gallery = () => {
             setActiveFilter(category);
             setFilteredImages(gallery.filter(image => category === 'todas' || image.category === category));
             setIsAnimating(false);
-        }, 300); // Ajusta el tiempo para que coincida con la duración de la animación
+        }, 300);
     };
 
     return (
@@ -41,7 +41,7 @@ const Gallery = () => {
                 {['todas', 'editorial', 'publicitario', 'marcas', 'packaging', 'etiquetas'].map((category) => (
                     <button
                         key={category}
-                        className={`filter-button px-8 py-4 mx-2 my-2 bg-gray-200 rounded-lg  ${activeFilter === category ? 'active' : ''}`}
+                        className={`filter-button inline-block px-3 py-2 md:px-8 md:py-4 mx-2 my-2 bg-gray-200 rounded-lg ${activeFilter === category ? 'active' : ''}`}
                         onClick={() => handleFilterClick(category)}
                     >
                         {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -49,19 +49,35 @@ const Gallery = () => {
                 ))}
             </div>
 
-            <div className="columns-2 lg:columns-4 md:columns-3 gap-4">
+            <div className="columns-2 lg:columns-4 md:columns-3 xl:columns-5 gap-4 px-4">
                 {filteredImages.map((image, index) => (
-                    <img
+                    <ImageComponent
                         key={index}
-                        className={`mb-4 inline-block h-auto max-w-full rounded-lg transition-all duration-300 ease-in-out transform ${
-                            isAnimating ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
-                        }`}
-                        src={image.imageUrl}
-                        alt={image.name}
+                        imageUrl={image.imageUrl}
+                        altText={image.name}
+                        isAnimating={isAnimating}
                     />
                 ))}
             </div>
         </div>
+    );
+};
+
+const ImageComponent = ({ imageUrl, altText, isAnimating }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
+    return (
+        <img
+            ref={ref}
+            className={`mb-4 inline-block h-auto max-w-full rounded-lg transition-all duration-300 ease-in-out transform ${
+                isAnimating ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+            }`}
+            src={inView ? imageUrl : ''}
+            alt={altText}
+        />
     );
 };
 
