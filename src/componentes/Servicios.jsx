@@ -5,7 +5,7 @@ import React from 'react';
 const Servicios = ({ services, title, description }) => {
   return (
     <div className="flex py-24 md:py-32">
-      <div className="grid grid-cols-1 gap-4 px-6 mx-auto max-w-7xl md:grid-cols-2 lg:px-8">
+      <div className="grid grid-cols-1 gap-4 px-6 mx-auto max-w-6xl md:grid-cols-2 lg:px-8">
         <div className="sticky top-0 z-20 py-2 max-w-2xl bg-white min-h-max md:h-64">
           <h2 className="text-3xl poppins-black text-primary sm:text-4xl">{title}</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
@@ -21,6 +21,7 @@ const Servicios = ({ services, title, description }) => {
                   <h4 className="mb-2 text-xl poppins-black text-primary">{service.name}</h4>
                   <div className="text-gray-700">
                     {service.description}
+                    
                     <ul>
                       {service.incluye.map((item, index) => (
                         <li key={index} className="ml-4 list-disc">{item}</li>

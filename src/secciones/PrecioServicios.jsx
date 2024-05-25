@@ -42,7 +42,7 @@ const Servicios = () => {
 
   return (
     <div className="py-8 bg-terciary">
-      <div className="container mx-auto">
+      <div className="container px-6 mx-auto max-w-6xl">
         <div className="flex justify-center w-full">
           <div className="mb-4">
             <img
@@ -76,7 +76,7 @@ const Servicios = () => {
           <div className="grid gap-4 md:grid-cols-2">
             {pricingPlans.map((plan, index) => (
               <div key={index}>
-                <div id={plan.id} className={`p-4 mb-8 bg-white rounded rounded-lg border-l ${selectedPlan === plan.id ? 'blur-none transition duration-300 ease-in-out transform scale-100 shadow-lg grayscale-0' : 'grayscale transition duration-300 ease-in-out transform scale-70 blur-sm'}`}>
+                <div id={plan.id} className={`p-4 mb-8 bg-white rounded-lg border-l ${selectedPlan === plan.id ? 'blur-none transition duration-300 ease-in-out transform scale-100 shadow-lg grayscale-0' : 'grayscale transition duration-300 ease-in-out transform scale-75 blur-sm'}`}>
 
                   <div className="mb-4">
                     <h2 className="text-2xl font-bold">{plan.planTitle}</h2>
