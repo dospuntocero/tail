@@ -16,9 +16,9 @@ export default defineConfig({
       input: {
         main: resolve(root, 'index.html'),
         web: resolve(root, 'web','index.html'),
+        gastronomia: resolve(root, 'gastronomia','index.html'),
       },
     },
     base: '',
   },
 })
-
