@@ -33,11 +33,11 @@ export default function Footer() {
 
             <div>
                 <h3 class="text-lg font-semibold">Servicios</h3>
-                <p><a href="/gastronomia/" class="text-blue-500 hover:underline">Gastronomía</a></p>
-                <p><a href="/web/" class="text-blue-500 hover:underline">Diseño Web</a></p>
-                <p><a href="/diseno-grafico/" class="text-blue-500 hover:underline">Diseño Gráfico</a></p>
-                <p><a href="/diseno-redes-sociales/" class="text-blue-500 hover:underline">Redes Sociales</a></p>
-                <p><a href="/fotografia/" class="text-blue-500 hover:underline">Fotografía</a></p>
+                <p><a href="/gastronomia/" class="text-[#C48F3A] hover:underline">Gastronomía</a></p>
+                <p><a href="/web/" class="text-[#C48F3A] hover:underline">Diseño Web</a></p>
+                <p><a href="/diseno-grafico/" class="text-[#C48F3A] hover:underline">Diseño Gráfico</a></p>
+                <p><a href="/diseno-redes-sociales/" class="text-[#C48F3A] hover:underline">Redes Sociales</a></p>
+                <p><a href="/fotografia/" class="text-[#C48F3A] hover:underline">Fotografía</a></p>
             </div>
             <div>
                 <h3 class="text-lg font-semibold">¿Necesitas facilidades de pago?</h3>
@@ -59,7 +59,7 @@ export default function Footer() {
 
         </div>
         <div class="pt-8 mt-12 text-center border-t border-gray-300">
-            <p>2020 - 2024 Hecho con <span class="text-red-500">❤</span> por <a href="https://zeleny.cl" class="text-blue-500 hover:underline">Zeleny <span class="font-bold">®</span></a></p>
+            <p>2020 - 2024 Hecho con <span class="text-red-500">❤</span> por <a href="https://zeleny.cl" class="text-[#C48F3A] hover:underline">Zeleny <span class="font-bold">®</span></a></p>
         </div>
     </div>
 </footer>

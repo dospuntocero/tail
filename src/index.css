@@ -19,12 +19,13 @@
 }
 
 .btn{
-    @apply bg-accent text-white font-bold py-2 px-4 rounded transition;
+    @apply px-4 py-2 font-bold text-white rounded transition bg-accent;
 }
 
 .btn:hover{
-    @apply bg-accent saturate-150;
+    @apply saturate-150 bg-accent;
 }
+
 .filter-button:hover, 
 .filter-button.active{
   @apply bg-terciary;

@@ -10,7 +10,7 @@ const Servicios = ({ services, title, description }) => {
           <h2 className="text-3xl poppins-black text-primary sm:text-4xl">{title}</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
         </div>
-        <div className="grid relative z-10 grid-cols-1 gap-4 lg:grid-cols-2">
+        <div className="grid relative z-10 grid-cols-1 gap-4">
           {services.map((service) => (
             <div key={service.name} className="relative p-4 mb-4 bg-white rounded-lg border transition-shadow md:mb-0 hover:shadow-lg">
               <div className="text-left">

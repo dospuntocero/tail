@@ -1,19 +1,20 @@
 export default function Header() {
   return (
-    <header class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 my-8">
+    <header class="px-4 mx-auto my-8 max-w-6xl sm:px-6 md:px-8">
       <img src="https://zeleny.cl/wp-content/uploads/2022/05/zeleny-R-Negro.png" alt="nuestro logo :D" />
-      <div class="grid md:grid-cols-2 gap-4 items-center">
+      <div class="grid gap-4 items-center md:grid-cols-2">
         <div>
-          <h1 class="poppins-regular lg:text-3xl text-3xl mb-4">
+          <h1 class="mb-4 text-3xl poppins-regular lg:text-3xl">
             Te ofrecemos un servicio personalizado en tu &nbsp;
             <strong class="block text-primary">Comunicación Visual</strong>
           </h1>
-          <a href="" class="font-4  xl btn poppins-regular tracking-wide">
+          <a href="https://wa.me/56976226261" target="_blank" class="tracking-wide font-4 xl btn poppins-regular hover:bg-[#25D366]">
             <span class="drop-shadow-md">Escríbenos!</span>
           </a>
         </div>
         <div>
-          <img src="https://zeleny.cl/wp-content/uploads/2024/05/home-zeleny.png" alt="" />
+            <img src="/assets/servicios/home-zeleny.png" alt="imagen descriptiva" />
+          
         </div>
       </div>
     </header>

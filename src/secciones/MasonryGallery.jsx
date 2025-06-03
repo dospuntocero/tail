@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-
 const gallery = [
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg', category: 'editorial' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg', category: 'publicitario' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg', category: 'marcas' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg', category: 'editorial' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg', category: 'publicitario' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg', category: 'marcas' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg', category: 'publicitario' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg', category: 'marcas' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg', category: 'editorial' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg', category: 'packaging' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg', category: 'editorial' },
-    { imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg', category: 'packaging' },
-    { imageUrl: 'https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihZVuY_yD_rc6z69DzlCaFzuOJXBvAUhlyBqEJR7ggrVMswUxHy8FIfaJ0Gp-K0PG1bPrF730G1p8dAuJSu7JX7etmYy0dJBcYQ=w2560-h1440-rw-v1', category: 'editorial', name:'PetClinic Carnet de Salud', },
-    { imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AKGpihYGeQXlyZtfk9YgU4CxApvAGSD6mbjDWPLj5fVqJUqtdfkrXhtWCII0u1tJXNiD6z1f9YzUhfMIW01Ubbe2b78tmOkax2aduqE=w1978-h1450', category: 'editorial', name:'Aviso de Prensa INACAP Capacitaciones', },
-    { imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AKGpihYuE8A8L83u9fi7_9bPouZUxpUqhTkNx1kbnNzj6A8ARe18nQMBDMWE8Z6t6BOPWnHOMEUuhn-Ibvtg9JbGNa8RaPiTX7V37cw=w1978-h1450-rw-v1', category: 'marcas', name:'PetClinic Diseño de Marca', },
-    { imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AKGpihY_maquRQbpoMXuFzJGeTJ5evBq4-dhuTt6e9pM3pzVi_RhJ3PjbT0kQOgVIwyeg6mJT3fNKzHWP94FIJkZPNNlAtIzjvL5-EI=w1978-h1450-rw-v1', category: 'publicitario', name:'Afiche Publicitario AMIX 10 años', },
-    { imageUrl: 'https://lh3.googleusercontent.com/drive-viewer/AKGpihYFyijBwuELRDKwOjYSlmBePDT0INUV_q6dm7MtkutwAvUV_mv4FR7GFBgY-hXDWEJVlHDQNtv8vnUPi1oewmNaS1oWQVzdjvU=w1978-h1450-rw-v1', category: 'publicitario', name:'Afiche Publicitario Kétchup AMIX', },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web Bermost.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web BoleroGarbo.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web igmen.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web K&F.jpg', category: 'web'},
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web Nilachal.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web Nitay.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web OlimpSport.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web PetStop.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web ProntoBeauty.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-Marca-feluen.jpg', category: 'marcas' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-Marca-SushiClub.jpg', category: 'marcas' },
+
 ];
+
+// Fisher-Yates (Knuth) Shuffle
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+    return array;
+}
 
 const Gallery = () => {
     const [activeFilter, setActiveFilter] = useState('todas');
-    const [filteredImages, setFilteredImages] = useState(gallery);
+    // Shuffle the gallery array on initial load
+    const [filteredImages, setFilteredImages] = useState(shuffleArray([...gallery]));
     const [isAnimating, setIsAnimating] = useState(false);
 
     const handleFilterClick = (category) => {
@@ -37,8 +41,8 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className="filters text-center mb-4">
-                {['todas', 'editorial', 'publicitario', 'marcas', 'packaging', 'etiquetas'].map((category) => (
+            <div className="filters text-center mb-4 ">
+                {['todas', 'web', 'editorial', 'publicitario', 'marcas', 'packaging', 'etiquetas', 'fotografia'].map((category) => (
                     <button
                         key={category}
                         className={`filter-button inline-block px-3 py-2 md:px-8 md:py-4 mx-2 my-2 bg-gray-200 rounded-lg ${activeFilter === category ? 'active' : ''}`}
@@ -72,11 +76,11 @@ const ImageComponent = ({ imageUrl, altText, isAnimating }) => {
     return (
         <img
             ref={ref}
-            className={`mb-4 inline-block h-auto max-w-full rounded-lg transition-all duration-300 ease-in-out transform ${
+            className={`mb-4 inline-block h-auto max-w-full rounded-lg transition-all duration-300 ease-in-out transform border-2 border-red-500 ${
                 isAnimating ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
             }`}
             src={inView ? imageUrl : ''}
-            alt={altText}
+            alt={'DEBUG: ' + altText}
         />
     );
 };
