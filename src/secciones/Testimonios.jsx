@@ -10,7 +10,7 @@ const testimonials =
             nombre: "Erick Mardones",
             puesto: "Trae mi Camara",
             testimonio: "Destacar que ha sido de las mejores que hemos tenido como empresa. Nos creó un sitio web intuitivo, minimalista e integrando cada uno de los requerimientos que solicitamos para hacerlo una página web aún más personalizada. Siempre existió una voluntad y paciencia de oro, considerando que no todos manejamos los aspectos relacionados a una buena web. Zeleny nos hizo partícipe de todo el proceso, pidiéndonos el visto bueno en los elementos claves del sitio, antes de dejarlo como definitivo. Muchas veces pedimos cambios o solicitudes especiales, donde ellos con mucha dedicación lo hicieron sin problemas.",
-            url_imagen: "./assets/testimonios/alexander-anich.png"
+            url_imagen: "./assets/testimonios/Erick-Mardones.png"
 
         },
         {
@@ -24,8 +24,7 @@ const testimonials =
             nombre: "Carlos Fuenzalida",
             puesto: "Ex Director DAE, INACAP Valparaíso",
             testimonio: "Zeleny en el tiempo que nos tocó trabajar, demostraron ser muy profesionales, puntuales en sus trabajos y un excelente trabajo y profesionalismo.",
-            url_imagen: "./assets/testimonios/alexander-anich.png"
-
+            url_imagen: "./assets/testimonios/Carlos-Fuenzalida.png"
         },
         {
             nombre: "Alexander Anich",
