@@ -8,6 +8,7 @@ import MasonryGallery from './secciones/MasonryGallery'
 import Presentacion from './secciones/Presentacion'
 import GaleriaLogos from './secciones/GaleriaLogos'
 import Services from './secciones/Servicios'
+import Testimonios from './secciones/Testimonios'
 import Footer from './secciones/Footer'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <GaleriaLogos/>
       <Faqs/>
       <MasonryGallery/>
+      <Testimonios/>
       <Footer/>
     </>
   )

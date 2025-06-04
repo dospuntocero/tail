@@ -72,7 +72,9 @@ const LogoGallery = () => {
     return (
         <div className="mx-auto max-w-7xl">
             <section className="flex items-center logo-gallery">
-                <button className="order-1 px-4 mr-4 h-10 rounded-full bg-accent" onClick={() => handleScroll(-300)}>&lt;</button>
+                <button className="order-1 px-4 mr-4 h-10 rounded-full bg-accent" onClick={() => handleScroll(-300)}>
+&lt;
+                </button>
                 <div className="overflow-x-hidden order-2 w-full grow" ref={containerRef}>
                     <div className="flex space-x-4">
                         {logos.map((logo, index) => (
@@ -80,7 +82,9 @@ const LogoGallery = () => {
                         ))}
                     </div>
                 </div>
-                <button className="order-3 px-4 ml-4 h-10 rounded-full bg-accent" onClick={() => handleScroll(300)}>&gt;</button>
+                <button className="order-3 px-4 ml-4 h-10 rounded-full bg-accent" onClick={() => handleScroll(300)}>
+&gt;
+                </button>
             </section>
         </div>
     );

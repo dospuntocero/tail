@@ -12,7 +12,16 @@ const gallery = [
     { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny Web ProntoBeauty.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-Marca-feluen.jpg', category: 'marcas' },
     { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-Marca-SushiClub.jpg', category: 'marcas' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-editorial-PetClinic.jpg', category: 'editorial' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-feluen-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-Gastronomia-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-LimacheCollege-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-Marca-SushiClub.jpg', category: 'marcas' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-publicitario-fotografia-EFE-Chile-01.jpg', category: 'publicitario' },
+    { imageUrl: './assets/portafolio/marcas/Portafolio-Zeleny-publicitario-fotografia-EFE-Chile-02.jpg', category: 'publicitario' },
 
+    
+    
 ];
 
 // Fisher-Yates (Knuth) Shuffle
@@ -41,8 +50,12 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className="filters text-center mb-4 ">
-                {['todas', 'web', 'editorial', 'publicitario', 'marcas', 'packaging', 'etiquetas', 'fotografia'].map((category) => (
+            <div className="mb-4 text-center filters">
+                {['todas', 'web', 'editorial', 'publicitario', 'marcas', 'packaging', 'etiquetas', 'fotografia']
+                    .filter(category => 
+                        category === 'todas' || gallery.some(image => image.category === category)
+                    )
+                    .map((category) => (
                     <button
                         key={category}
                         className={`filter-button inline-block px-3 py-2 md:px-8 md:py-4 mx-2 my-2 bg-gray-200 rounded-lg ${activeFilter === category ? 'active' : ''}`}
@@ -53,7 +66,7 @@ const Gallery = () => {
                 ))}
             </div>
 
-            <div className="columns-2 lg:columns-4 md:columns-3 xl:columns-5 gap-4 px-4">
+            <div className="gap-4 px-4 columns-2 lg:columns-4 md:columns-3 xl:columns-5">
                 {filteredImages.map((image, index) => (
                     <ImageComponent
                         key={index}
@@ -80,7 +93,7 @@ const ImageComponent = ({ imageUrl, altText, isAnimating }) => {
                 isAnimating ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
             }`}
             src={inView ? imageUrl : ''}
-            alt={'DEBUG: ' + altText}
+            //alt={'DEBUG: ' + altText}
         />
     );
 };
