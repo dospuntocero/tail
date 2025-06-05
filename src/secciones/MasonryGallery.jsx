@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 const gallery = [
-    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny-Web-Bermost.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-bermost.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-bolerogarbo.jpg', category: 'web' },
-    { imageUrl: './assets/portafolio/sitioweb/Portafolio-Zeleny-Web-igmen.jpg', category: 'web' },
+    { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-igmen.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-k&f.jpg', category: 'web'},
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-nilachal.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-nitay.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-olimpsport.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-petstop.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-prontobeauty.jpg', category: 'web' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-feluen.jpg', category: 'marcas' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-editorial-petclinic.jpg', category: 'editorial' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-feluen-fotografia-01.jpg', category: 'fotografia' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-gastronomia-fotografia-01.jpg', category: 'fotografia' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-limachecollege-fotografia-01.jpg', category: 'fotografia' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-publicitario-fotografia-efe-chile-01.jpg', category: 'publicitario' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-publicitario-fotografia-efe-chile-02.jpg', category: 'publicitario' },
-
-    
-    
+    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-feluen.jpg', category: 'marcas' }, // duplicated - removed later
+    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' }, // duplicated - removed later
+    { imageUrl: './assets/portafolio/editorial/portafolio-zeleny-editorial-petclinic.jpg', category: 'editorial' },
+    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-feluen-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-gastronomia-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-limache-college-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' }, // duplicated - removed later
+    { imageUrl: './assets/portafolio/publicitario/portafolio-zeleny-publicitario-fotografia-efe-chile-01.jpg', category: 'publicitario' },
+    { imageUrl: './assets/portafolio/publicitario/portafolio-zeleny-publicitario-fotografia-efe-chile-02.jpg', category: 'publicitario' },
+        
 ];
 
 // Fisher-Yates (Knuth) Shuffle

@@ -1,16 +1,17 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2679621575.
 const testimonials = 
 [
         {
             nombre: "Valentina Casanova",
             puesto: "Ex Directora de Admisión & Comunicaciones, INACAP Valparaíso",
             testimonio: "Trabajar con Zeleny me ayudó a ampliar mi horizonte de ideas y representar gráficamente lo que necesitábamos desarrollar. Es muy responsable y orientado al cumplimiento en plazos y obligaciones. Es interdisciplinario en su desarrollo, lo que fomenta el trabajo en equipo y ayuda al positivo clima laboral, adaptándose a los cambios y a las distintas tareas.",
-            url_imagen: "./assets/testimonios/Valentina-Casanova.png"
+            url_imagen: "./assets/testimonios/valentina-casanova.png"
         },
         {
             nombre: "Erick Mardones",
             puesto: "Trae mi Camara",
             testimonio: "Destacar que ha sido de las mejores que hemos tenido como empresa. Nos creó un sitio web intuitivo, minimalista e integrando cada uno de los requerimientos que solicitamos para hacerlo una página web aún más personalizada. Siempre existió una voluntad y paciencia de oro, considerando que no todos manejamos los aspectos relacionados a una buena web. Zeleny nos hizo partícipe de todo el proceso, pidiéndonos el visto bueno en los elementos claves del sitio, antes de dejarlo como definitivo. Muchas veces pedimos cambios o solicitudes especiales, donde ellos con mucha dedicación lo hicieron sin problemas.",
-            url_imagen: "./assets/testimonios/Erick-Mardones.png"
+            url_imagen: "./assets/testimonios/erick-mardones.png"
 
         },
         {
@@ -24,7 +25,7 @@ const testimonials =
             nombre: "Carlos Fuenzalida",
             puesto: "Ex Director DAE, INACAP Valparaíso",
             testimonio: "Zeleny en el tiempo que nos tocó trabajar, demostraron ser muy profesionales, puntuales en sus trabajos y un excelente trabajo y profesionalismo.",
-            url_imagen: "./assets/testimonios/Carlos-Fuenzalida.png"
+            url_imagen: "./assets/testimonios/carlos-fuenzalida.png"
         },
         {
             nombre: "Alexander Anich",
