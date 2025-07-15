@@ -147,18 +147,18 @@ export default function Testimonials() {
       {/* Contenedor Scrollable */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto scroll-smooth snap-x snap-mandatory space-x-6 px-12 md:px-40 w-full max-w-full"
+        className="flex overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory space-x-6 px-12 md:px-40 w-full max-w-full"
       >
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
             data-index={index}
             ref={(el) => (itemRefs.current[index] = el)}
-            className={`flex-shrink-0 w-full md:w-1/3 snap-center transition-all duration-500 transform ${
+            className={`flex-shrink-0 w-full md:w-1/3 nap-center transition-all duration-500 transform ${
               visibleItems[index] ? 'scale-105' : 'blur-sm opacity-60'
             }`}
           >
-            <div className="h-full p-4 bg-white rounded-lg border-4 shadow-lg border-terciary">
+            <div className="h-full p-4 bg-white rounded-lg ">
               <div className="flex items-center mb-4">
                 <img
                   src={testimonial.url_imagen}
