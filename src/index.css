@@ -1,7 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+
+  --color-primary: #c48f3a;
+  --color-secondary: #000000;
+  --color-terciary: #f2f2f2;
+  --color-accent: #c5a572;
+
+
+}
 
 
 @layer base {
@@ -16,7 +23,6 @@
         font-weight: 900;
         font-style: normal;
       }
-
 
       .fade-out {
         opacity: 0;
@@ -42,7 +48,7 @@
 }
 
 .testimonios{
-  @apply grid auto-cols-max grid-flow-col;
+  @apply grid auto-cols-max grid-flow-col px-40;
 }
 .testimonio{
   @apply w-80;
