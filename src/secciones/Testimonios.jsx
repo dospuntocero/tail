@@ -129,13 +129,14 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       scrollNext();
-    }, 5000);
+    }, 50000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative flex justify-center items-center w-full">
+    <>
+    <div className="flex relative justify-center items-center py-40 w-full">
       {/* Botón Prev */}
       <button
         onClick={scrollPrev}
@@ -147,7 +148,7 @@ export default function Testimonials() {
       {/* Contenedor Scrollable */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory space-x-6 px-12 md:px-40 w-full max-w-full"
+        className="flex overflow-x-auto overflow-y-hidden px-12 space-x-6 w-full max-w-full scroll-smooth snap-x snap-mandatory md:px-40"
       >
         {testimonials.map((testimonial, index) => (
           <div
@@ -155,10 +156,10 @@ export default function Testimonials() {
             data-index={index}
             ref={(el) => (itemRefs.current[index] = el)}
             className={`flex-shrink-0 w-full md:w-1/3 nap-center transition-all duration-500 transform ${
-              visibleItems[index] ? 'scale-105' : 'blur-sm opacity-60'
+              visibleItems[index] ? 'scale-105' : 'opacity-60 blur-sm'
             }`}
           >
-            <div className="h-full p-4 bg-white rounded-lg ">
+            <div className="p-4 h-full bg-white rounded-lg">
               <div className="flex items-center mb-4">
                 <img
                   src={testimonial.url_imagen}
@@ -184,5 +185,6 @@ export default function Testimonials() {
         ▶
       </button>
     </div>
+    </>
   );
 }
