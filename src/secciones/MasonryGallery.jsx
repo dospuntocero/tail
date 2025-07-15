@@ -10,16 +10,23 @@ const gallery = [
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-olimpsport.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-petstop.jpg', category: 'web' },
     { imageUrl: './assets/portafolio/sitioweb/portafolio-zeleny-web-prontobeauty.jpg', category: 'web' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-feluen.jpg', category: 'marcas' }, // duplicated - removed later
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' }, // duplicated - removed later
+    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-feluen.jpg', category: 'marcas' },
+    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' },
     { imageUrl: './assets/portafolio/editorial/portafolio-zeleny-editorial-petclinic.jpg', category: 'editorial' },
     { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-feluen-fotografia-01.jpg', category: 'fotografia' },
     { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-gastronomia-fotografia-01.jpg', category: 'fotografia' },
-    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-limache-college-fotografia-01.jpg', category: 'fotografia' },
-    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-sushiclub.jpg', category: 'marcas' }, // duplicated - removed later
+    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-limachecollege-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-loor-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/fotografia/portafolio-zeleny-proaalmar-fotografia-01.jpg', category: 'fotografia' },
+    { imageUrl: './assets/portafolio/marcas/portafolio-zeleny-marca-petclinic.jpg', category: 'marcas' }, 
     { imageUrl: './assets/portafolio/publicitario/portafolio-zeleny-publicitario-fotografia-efe-chile-01.jpg', category: 'publicitario' },
     { imageUrl: './assets/portafolio/publicitario/portafolio-zeleny-publicitario-fotografia-efe-chile-02.jpg', category: 'publicitario' },
-        
+    { imageUrl: './assets/portafolio/gastronomia/portafolio-zeleny-gatronomia-cartadigital-sushiclub.jpg', category: 'gastronomia' }, 
+    { imageUrl: './assets/portafolio/gastronomia/portafolio-zeleny-gatronomia-sushiclub.jpg', category: 'gastronomia' }, 
+    { imageUrl: './assets/portafolio/packaging/portafolio-zeleny-packaging-quinoto-nitay.jpg', category: 'packaging' }, 
+
+    
+
 ];
 
 // Fisher-Yates (Knuth) Shuffle
@@ -48,7 +55,11 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className="mb-4 text-center filters">
+            <div class="py-10 mx-auto max-w-2xl md:py-20 poppins-regular"
+>
+            <h2 className="mt-5 mb-4 text-center text-1xl text-primary poppins-black sm:text-4xl">Nuestros Trabajos</h2>
+            </div>
+            <div className="flex flex-wrap justify-center px-2 mb-4 text-center filters">
                 {['todas', 'web', 'editorial', 'publicitario', 'marcas', 'packaging', 'etiquetas', 'fotografia']
                     .filter(category => 
                         category === 'todas' || gallery.some(image => image.category === category)
@@ -67,7 +78,7 @@ const Gallery = () => {
             <div className="gap-4 px-4 columns-2 lg:columns-4 md:columns-3 xl:columns-5">
                 {filteredImages.map((image, index) => (
                     <ImageComponent
-                        key={index}
+ key={index}
                         imageUrl={image.imageUrl}
                         altText={image.name}
                         isAnimating={isAnimating}

@@ -1,4 +1,32 @@
+import { useEffect, useState } from 'react';
+
+const testimonials = [
+  {
+    quote: "Gravida quam mi erat tortor neque molestie. Auctor aliquet at porttitor a enim nunc suscipit tincidunt nunc. Et non lorem tortor posuere. Nunc eu scelerisque interdum eget tellus non nibh scelerisque bibendum.",
+    author: "Judith Black",
+    title: "CEO of Workcation",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
+  },
+  // Add more testimonials here following the same structure
+];
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+  return array;
+}
+
 export default function Testimonials() {
+    const [shuffledTestimonials, setShuffledTestimonials] = useState([]);
+
+    useEffect(() => {
+      setShuffledTestimonials(shuffleArray([...testimonials]));
+    }, []);
+
+    const testimonial = shuffledTestimonials[0] || {}; // Display the first shuffled testimonial
+
     return (
       <div className="bg-white pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32">
         <div className="bg-gray-900 pb-20 sm:pb-24 xl:pb-0">
@@ -7,8 +35,8 @@ export default function Testimonials() {
               <div className="relative aspect-[2/1] h-full md:-mx-8 xl:mx-0 xl:aspect-auto">
                 <img
                   className="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl"
-                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"
-                  alt=""
+                  src={testimonial.image}
+                  alt={testimonial.author}
                 />
               </div>
             </div>
@@ -28,14 +56,12 @@ export default function Testimonials() {
                 </svg>
                 <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
                   <p>
-                    Gravida quam mi erat tortor neque molestie. Auctor aliquet at porttitor a enim nunc suscipit tincidunt
-                    nunc. Et non lorem tortor posuere. Nunc eu scelerisque interdum eget tellus non nibh scelerisque
-                    bibendum.
+                    {testimonial.quote}
                   </p>
                 </blockquote>
                 <figcaption className="mt-8 text-base">
-                  <div className="font-semibold text-white">Judith Black</div>
-                  <div className="mt-1 text-gray-400">CEO of Workcation</div>
+                  <div className="font-semibold text-white">{testimonial.author}</div>
+                  <div className="mt-1 text-gray-400">{testimonial.title}</div>
                 </figcaption>
               </figure>
             </div>

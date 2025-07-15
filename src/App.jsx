@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './output.css'
+import './index.css'
 import Header from './secciones/Header.jsx'
 import Testimonials from './secciones/Testimonials.jsx'
 import Faqs from './secciones/Faqs'
@@ -18,8 +18,8 @@ function App() {
       <Header/>
       <Presentacion/>
       <Services/>
+      
       <GaleriaLogos/>
-      <Faqs/>
       <MasonryGallery/>
       <Testimonios/>
       <Footer/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import '../output.css';
+import '../index.css';
 import Header from '../secciones/Header';
 import Footer from '../secciones/Footer';
 import Menu from '../componentes/Menu';
@@ -12,7 +12,6 @@ function App() {
     <>
     <Testimonios/>
     <Menu/>
-    <Footer/>
     </>
   );
 }

@@ -1,3 +1,4 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:129366807.
 import React from 'react';
 import Servicios from '../componentes/Servicios';
 
@@ -10,7 +11,7 @@ const services = [
         incluye: [
           'Asesoramiento', 'Branding institucional', 'Packaging', 'Diseño ecológico'
         ],
-        imageUrl:'./assets/servicios/Diseno-Grafico-Zeleny.png',
+        imageUrl:'./assets/servicios/diseno-grafico-zeleny.png',
     },
     {
       name: 'Desarrollo Web',
@@ -21,7 +22,7 @@ const services = [
         'Landing page (Página de inicio)',
         'Web corporativas e informativas'
       ],
-      imageUrl:'./assets/servicios/Diseno-Web-Zeleny.png',
+      imageUrl:'./assets/servicios/diseno-web-zeleny.png',
     },
     {
       name:'Redes Sociales',
@@ -33,7 +34,7 @@ const services = [
       'Análisis de rendimiento',
       'Actualizaciones constantes'
       ],
-      imageUrl:'./assets/servicios/Redes-Sociales-Zeleny.png'
+      imageUrl:'./assets/servicios/redes-sociales-zeleny.png'
     },
     {
       name:'Fotografía',
@@ -46,7 +47,7 @@ const services = [
       'Fotografía de Productos',
       'Fotografía e-Commerce'
       ],
-      imageUrl:'./assets/servicios/Fotografia-Zeleny.png'
+      imageUrl:'./assets/servicios/fotografia-zeleny.png'
     },
     
 

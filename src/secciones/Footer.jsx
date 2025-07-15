@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="flex items-center space-x-3">
                     <div>
                         <h4 className="text-lg poppins-black">WhatsApp</h4>
-                        <p className="text-2xl text-primary poppins-regular">+56 9 7622 6261</p>
+ <p className="text-2xl text-primary poppins-regular"><a href="https://wa.me/56976226261" target="_blank" rel="noopener noreferrer">+56 9 7622 6261</a></p>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="flex items-center space-x-3">
                     <div>
                         <h4 className="text-lg poppins-black">Correo</h4>
-                        <p className="text-2xl text-primary poppins-regular">contacto@zeleny.cl</p>
+                        <p className="text-2xl text-primary poppins-regular"><a href="mailto:contacto@zeleny.cl">contacto@zeleny.cl</a></p>
                     </div>
                 </div>
             </div>

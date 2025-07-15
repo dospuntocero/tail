@@ -16,6 +16,16 @@
         font-weight: 900;
         font-style: normal;
       }
+
+
+      .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out; /* Adjust the duration and timing as needed */
+      }
+
+      .image-component { /* Assuming ImageComponent renders an element with this class or you can adjust the selector */
+        transition: opacity 0.5s ease-in-out; /* Add a transition for the fade-in effect */
+      }
 }
 
 .btn{
@@ -29,4 +39,11 @@
 .filter-button:hover, 
 .filter-button.active{
   @apply bg-terciary;
+}
+
+.testimonios{
+  @apply grid auto-cols-max grid-flow-col;
+}
+.testimonio{
+  @apply w-80;
 }

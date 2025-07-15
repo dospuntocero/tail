@@ -71,6 +71,9 @@ const LogoGallery = () => {
 
     return (
         <div className="mx-auto max-w-7xl">
+            <div className="py-10 mx-auto max-w-2xl md:py-20 poppins-regular">
+ <h2 className="mt-5 mb-4 text-center text-1xl text-primary poppins-black sm:text-4xl whitespace-nowrap overflow-hidden text-ellipsis" style={{ color: '#C48F3A' }}>Crecimos acompañando el desarrollo de nuestros clientes</h2>
+            </div>
             <section className="flex items-center logo-gallery">
                 <button className="order-1 px-4 mr-4 h-10 rounded-full bg-accent" onClick={() => handleScroll(-300)}>
 &lt;
